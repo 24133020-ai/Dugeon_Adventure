@@ -9,7 +9,7 @@ Dungeon Adventure is a 2D roguelike dungeon-crawler built with Python and the Py
 * **Explore:** Move through the dungeon, clear the fog of war, and collect all 4 hidden keys.
 * **Unlock Minimap:** Locate the Laboratory Room and interact with it to permanently unlock the minimap navigation view.
 * **Decrypt the Gate:** Head to the Warden Gate and stand near it to let the automated Backtracking CSP algorithm unlock the boss entrance.
-* **Final Battle:** Enter the portal and defeat the Dungeon Boss in a strategic game of Gomoku (Five-in-a-Row) to win the game.
+* **Final Battle:** Enter the Boss Room and defeat the Dungeon Boss in a game of Gomoku. Easy mode is played on a 6×6 board with 4 in a row to win, while Medium mode uses a 15×15 board with the standard 5 in a row victory condition.
 
 #### Item System:
 * **Health Potion:** Instantly restores the player's health to maximum upon pickup.
@@ -40,7 +40,7 @@ Dungeon Adventure is a 2D roguelike dungeon-crawler built with Python and the Py
 | **Greedy Best-First Search** | `ai/greedy.py` | Drives real-time enemy pursuit behaviors based on Manhattan Distance. |
 | **A* Search** | `ai/astar.py` | Controls elite enemy tracking routines using optimal step cost. |
 | **Forward Checking** | `ai/forward_checking.py` | Animates and solves the real-time lock-picking puzzle at the Warden Gate. |
-| **Min-Conflicts** | `ai/min_conflicts.py` | Drives the Tactical Advisor system to give strategic advice to the player. |
+| **Min-Conflicts** | `ai/min_conflicts.py` | Repairs the generated dungeon layout by relocating conflicting rooms, items, and traps until placement constraints are satisfied or conflicts are minimized. |
 | **Minimax & Alpha-Beta** | `ai/minimax.py` | Acts as the decision-making brain of the Gomoku Boss during the final battle. |
 
 ---
@@ -50,12 +50,12 @@ Dungeon Adventure is a 2D roguelike dungeon-crawler built with Python and the Py
 ```text
 AI_Dungeon_Adventure/
 │
-├── ai/                         # Core academic AI solvers (A*, UCS, Minimax, CSP modules)
-├── assets/                     # Character graphics, item sprites, custom UI fonts, and sounds
-├── game/                       # Entity controllers (Player, Inventory, Base Enemies, Traps)
+├── ai/                         # Core academic AI solvers 
+├── assets/                     # Character graphics, item sprites, custom UI fonts
+├── game/                       # Entity controllers 
 ├── maps/                       # Procedural generation pipelines, Fog of War, and custom arenas
-├── systems/                    # Core managers (Combat loops, Laboratory interactions, Puzzle triggers)
-├── ui/                         # Rendering canvases (HUD bars, Inventory screens, Game Over states)
+├── systems/                    # Core managers 
+├── ui/                         # Rendering canvases 
 ├── AI_USAGE.md                 # Technical breakdown documentation of AI integration
 ├── PROJECT_CONTEXT.md          # Project boundaries, rules, and course scope context
 ├── STRUCTURE.md                # System interaction blueprints and layout mappings
